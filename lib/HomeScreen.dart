@@ -8,6 +8,170 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final List<Widget> items = [
+    Story(name: "Nour Hesham", image: 'images/profile2.jpg'),
+    Story(name: "Hagar Hesham", image: 'images/profile3.jpeg'),
+    Story(name: "Abdelrahman Wael Ahmed", image: 'images/profile4.jpg'),
+    Story(name: "Abdelrahman ibrahim", image: 'images/profile5.jpeg'),
+    Story(name: "Sara Hesham", image: 'images/profile6.jpg'),
+    Story(name: "Maryam Hesham", image: 'images/profile7.jpg'),
+    Story(name: "Mohamed Ahmed Yasser", image: 'images/profile8.jpeg'),
+    Story(name: "Malak Yasser", image: 'images/profile9.jpeg'),
+    Story(name: "Serif Ahmed Yasser", image: 'images/profile10.jpeg'),
+  ];
+  final List<Widget> Profiles = [
+    Profile(
+        name: "Nour Hesham",
+        image: 'images/profile2.jpg',
+        text: "Reacted ❤️ to your message .29 Sep"),
+    Profile(
+        name: "Hagar Hesham",
+        image: 'images/profile3.jpeg',
+        text: "You called Hagar .17 Feb"),
+    Profile(
+        name: "Abdelrahman Wael Ahmed",
+        image: 'images/profile4.jpg',
+        text: "Abdelrahman Called you .14 Nov"),
+    Profile(
+        name: "Abdelrahman ibrahim",
+        image: 'images/profile5.jpeg',
+        text: "235 .19 Aug"),
+    Profile(
+        name: "Sara Hesham",
+        image: 'images/profile6.jpg',
+        text: "Sara Sent voice message .16 Nov"),
+    Row(
+      children: [
+        Stack(
+          alignment: AlignmentDirectional.bottomEnd,
+          children: [
+            CircleAvatar(
+              radius: 37,
+              backgroundImage: AssetImage('images/profile7.jpg'),
+            ),
+            CircleAvatar(
+              radius: 8,
+              backgroundColor: Colors.black,
+            ),
+            CircleAvatar(
+              radius: 7,
+              backgroundColor: Colors.green[500],
+            ),
+          ],
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Expanded(
+          child: SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Maryam Hesham",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  "You: Ok then .24 Nov",
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400),
+                )
+              ],
+            ),
+          ),
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Icon(
+              Icons.check_circle,
+              color: Colors.white24,
+            ),
+          ],
+        )
+      ],
+    ),
+    Row(
+      children: [
+        Stack(
+          alignment: AlignmentDirectional.bottomEnd,
+          children: [
+            CircleAvatar(
+              radius: 37,
+              backgroundImage: AssetImage('images/profile8.jpeg'),
+            ),
+            CircleAvatar(
+              radius: 8,
+              backgroundColor: Colors.black,
+            ),
+            CircleAvatar(
+              radius: 7,
+              backgroundColor: Colors.green[500],
+            ),
+          ],
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Expanded(
+          child: SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Mohamed Ahmed Yasser",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  "You: Friday then ?? .24 Nov",
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400),
+                )
+              ],
+            ),
+          ),
+        ),
+        Column(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            CircleAvatar(
+              radius: 10,
+              backgroundImage: AssetImage('images/profile8.jpeg'),
+            )
+          ],
+        ),
+      ],
+    ),
+    Profile(
+        name: "Malak Yasser",
+        image: 'images/profile9.jpeg',
+        text: "Reacted ❤️ to your message .29 Sep"),
+    Profile(
+        name: "Serif Ahmed Yasser",
+        image: 'images/profile10.jpeg',
+        text: "You called Serif .17 Feb"),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,215 +259,41 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         labelText: "Search",
                         labelStyle:
-                        TextStyle(color: Colors.grey[700], fontSize: 18)),
+                            TextStyle(color: Colors.grey[700], fontSize: 18)),
                   ),
                 ),
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Story(name: "Nour Hesham", image: 'images/profile2.jpg'),
-                    SizedBox(
+              Container(
+                height: 110,
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) {
+                    return SizedBox(
                       width: 13,
-                    ),
-                    Story(name: "Hagar Hesham", image: 'images/profile3.jpeg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(
-                        name: "Abdelrahman Wael Ahmed",
-                        image: 'images/profile4.jpg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(
-                        name: "Abdelrahman ibrahim",
-                        image: 'images/profile5.jpeg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(name: "Sara Hesham", image: 'images/profile6.jpg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(name: "Maryam Hesham", image: 'images/profile7.jpg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(
-                        name: "Mohamed Ahmed Yasser",
-                        image: 'images/profile8.jpeg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(name: "Malak Yasser", image: 'images/profile9.jpeg'),
-                    SizedBox(
-                      width: 13,
-                    ),
-                    Story(
-                        name: "Serif Ahmed Yasser",
-                        image: 'images/profile10.jpeg'),
-                  ],
+                    );
+                  },
+                  itemBuilder: (context, index) {
+                    return items[index];
+                  },
+                  itemCount: items.length,
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(
-                  name: "Nour Hesham",
-                  image: 'images/profile2.jpg',
-                  text: "Reacted ❤️ to your message .29 Sep"),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(
-                  name: "Hagar Hesham",
-                  image: 'images/profile3.jpeg',
-                  text: "You called Hagar .17 Feb"),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(
-                  name: "Abdelrahman Wael Ahmed",
-                  image: 'images/profile4.jpg',
-                  text: "Abdelrahman Called you .14 Nov"),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(
-                  name: "Abdelrahman ibrahim",
-                  image: 'images/profile5.jpeg',
-                  text: "235 .19 Aug"),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(
-                  name: "Sara Hesham",
-                  image: 'images/profile6.jpg',
-                  text: "Sara Sent voice message .16 Nov"),
-              SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  Stack(
-                    alignment: AlignmentDirectional.bottomEnd,
-                    children: [
-                      CircleAvatar(
-                        radius: 37,
-                        backgroundImage: AssetImage('images/profile7.jpg'),
-                      ),
-                      CircleAvatar(
-                        radius: 8,
-                        backgroundColor: Colors.black,
-                      ),
-                      CircleAvatar(
-                        radius: 7,
-                        backgroundColor: Colors.green[500],
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Maryam Hesham",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            "You: Ok then .24 Nov",
-                            style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Icon(
-                        Icons.check_circle,
-                        color: Colors.white24,
-                      ),
-                    ],
-                  )
-                ],
               ),
               SizedBox(height: 10,),
-              Row(
-                children: [
-                  Stack(
-                    alignment: AlignmentDirectional.bottomEnd,
-                    children: [
-                      CircleAvatar(
-                        radius: 37,
-                        backgroundImage: AssetImage('images/profile8.jpeg'),
-                      ),
-                      CircleAvatar(
-                        radius: 8,
-                        backgroundColor: Colors.black,
-                      ),
-                      CircleAvatar(
-                        radius: 7,
-                        backgroundColor: Colors.green[500],
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 10,),
-                  Expanded(
-                    child: SizedBox(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Mohamed Ahmed Yasser",style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500
-                          ),),
-                          SizedBox(height: 8,),
-                          Text("You: Friday then ?? .24 Nov",style: TextStyle(
-                              fontSize: 15,color: Colors.white,fontWeight: FontWeight.w400
-                          ),)
-                        ],
-                      ),
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(height: 20,),
-                      CircleAvatar(radius: 10,backgroundImage: AssetImage('images/profile8.jpeg'),)
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(name: "Malak Yasser", image: 'images/profile9.jpeg',text: "Reacted ❤️ to your message .29 Sep"),
-              SizedBox(
-                height: 10,
-              ),
-              Profile(
-                  name: "Serif Ahmed Yasser",
-                  image: 'images/profile10.jpeg',
-                  text: "You called Serif .17 Feb"),
+              ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemBuilder: (context, index) {
+                  return Profiles[index];
+                },
+                separatorBuilder: (context, index) {
+                  return SizedBox(
+                    height: 10,
+                  );
+                },
+                itemCount: Profiles.length,
+              )
             ],
           ),
         ),

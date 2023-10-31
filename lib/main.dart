@@ -18,21 +18,21 @@ class _MyAppState extends State<MyApp> {
 
   final tabs = [
     MyHomePage(),
-    Center(
-        child: Text(
-      "Calls",
-      style: TextStyle(fontSize: 20),
-    )),
-    Center(
-        child: Text(
-      "People",
-      style: TextStyle(fontSize: 20),
-    )),
-    Center(
-        child: Text(
-      "Stories",
-      style: TextStyle(fontSize: 20),
-    )),
+    Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+          child: Text(
+        "People",
+        style: TextStyle(fontSize: 20),
+      )),
+    ),
+  Scaffold(
+  backgroundColor: Colors.black,
+  body: Center(
+  child: Text(
+  "Stories",
+  style: TextStyle(fontSize: 20),
+  ))),
   ];
 
   @override
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Theme.of(context).primaryColorDark,
+          backgroundColor: Colors.black,
           currentIndex: _currentIndex,
           selectedItemColor: Colors.blue,
          unselectedItemColor: Colors.grey,
@@ -55,12 +55,6 @@ class _MyAppState extends State<MyApp> {
                 label: 'Chats'),
             BottomNavigationBarItem(
                 icon: Icon(
-                  Icons.videocam,
-                  size: 28,
-                ),
-                label: 'Calls'),
-            BottomNavigationBarItem(
-                icon: Icon(
                   Icons.people,
                   size: 28,
                 ),
@@ -71,6 +65,7 @@ class _MyAppState extends State<MyApp> {
                   size: 28,
                 ),
                 label: 'Stories'),
+
           ],
           onTap: (index) {
             setState(() {
